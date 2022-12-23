@@ -56,10 +56,10 @@ public class Producto {
 
    public Producto(JSONObject a) throws JSONException {
         idproducto = "Id Producto: " + a.getString("id").toString();
-        barcode = a.getString("barcode").toString() ;
-       costo = a.getString("costo").toString() ;
-        preciounidad = a.getString("precio_unidad").toString() ;
-      preciomayorista = a.getString("precio_mayorista").toString() ;
+        barcode = "Barcode: " + a.getString("barcode").toString() ;
+       costo = "Costo: " + "$"+a.getString("costo").toString() ;
+        preciounidad = "Precio de la Unidad: " + "$"+a.getString("precio_unidad").toString() ;
+      preciomayorista = "Precio Mayorista: " + "$"+a.getString("precio_mayorista").toString() ;
    }
 
 
