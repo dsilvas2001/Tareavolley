@@ -54,20 +54,22 @@ public class Producto {
         this.preciomayorista = preciomayorista;
     }
 
-   // public Producto(JSONObject a) throws JSONException {
-        //idproducto = a.getString("id").toString();
-        //barcode = a.getString("barcode").toString() ;
-       // costo = a.getString("costo").toString() ;
-       // preciounidad = a.getString("precio_unidad").toString() ;
-     //   preciomayorista = a.getString("precio_mayorista").toString() ;
-   // }
+   public Producto(JSONObject a) throws JSONException {
+        idproducto = a.getString("id").toString();
+        barcode = a.getString("barcode").toString() ;
+       costo = a.getString("costo").toString() ;
+        preciounidad = a.getString("precio_unidad").toString() ;
+      preciomayorista = a.getString("precio_mayorista").toString() ;
+   }
 
-    //public static ArrayList<Producto> JsonObjectsBuild(JSONArray datos) throws JSONException {
-      //  ArrayList<Producto> productos = new ArrayList<>();
-        //for (int i = 0; i < datos.length() && i<20; i++) {
-          //  productos.add(new Producto(datos.getJSONObject(i)));
-        //}
-        //return productos;
-    //}
+
+    public static ArrayList<Producto> JsonObjectsBuild(JSONArray datos) throws JSONException {
+        ArrayList<Producto> productos = new ArrayList<>();
+
+        for (int i = 0; i < datos.length(); i++) {
+            productos.add(new Producto(datos.getJSONObject(i)));
+        }
+        return productos;
+    }
 
 }

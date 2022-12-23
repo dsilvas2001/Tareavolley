@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp">
 
-        <TextView
-            android:id="@+id/lblidproducto"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:padding="8dp">
 
-        <TextView
-            android:id="@+id/lblbarcode"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="12467k9"
-            android:textSize="14sp"
-            android:textStyle="normal" />
+            <TextView
+                android:id="@+id/lblidproducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Nombre"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/lblbarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblidproducto"
+                android:layout_marginLeft="5dp"
+                android:text="correo@gmmail.com"
+                android:textAlignment="viewStart"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/lblcosto"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="100"
-            android:textSize="14sp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/lblprecunidad"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="120"
-            android:textSize="14sp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/lblprecmayorista"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="110"
-            android:textSize="14sp"
-            android:textStyle="normal" />
-    </LinearLayout>
-
-</LinearLayout>
+            <TextView
+                android:id="@+id/lblcosto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblbarcode"
+                android:layout_marginLeft="5dp"
+                android:text="URL Imagen"
+                />
+            <TextView
+                android:id="@+id/lblprecunidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblcosto"
+                android:layout_marginLeft="5dp"
+                android:text="URL Imagen"
+                />
+            <TextView
+                android:id="@+id/lblprecmayorista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblprecunidad"
+                android:layout_marginLeft="5dp"
+                android:text="URL Imagen"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
