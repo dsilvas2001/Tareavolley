@@ -86,7 +86,25 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
 
                 Toast.makeText(getApplicationContext(),  error.getMessage(), Toast.LENGTH_LONG).show();
             }
-        });
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZHVzciI6OSwiZW1haWwiOiJjemFtYnJhbm9AdXRlcS5lZHUuZWMiLCJpYXQiOjE2NzE1OTU4MDYsImV4cCI6MTY3MTk1NTgwNn0.ne3Hq-vVrD3Wmh18RXhrLizxlCv7mwkB3B9mrrZBWX4");
+                return param;
+            }
+
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("fuente","1");
+                return params;
+            }
+
+        };
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
 
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
