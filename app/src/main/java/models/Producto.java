@@ -55,7 +55,7 @@ public class Producto {
     }
 
    public Producto(JSONObject a) throws JSONException {
-        idproducto = a.getString("id").toString();
+        idproducto = "Id Producto: " + a.getString("id").toString();
         barcode = a.getString("barcode").toString() ;
        costo = a.getString("costo").toString() ;
         preciounidad = a.getString("precio_unidad").toString() ;
@@ -63,13 +63,13 @@ public class Producto {
    }
 
 
-    public static ArrayList<Producto> JsonObjectsBuild(JSONArray datos) throws JSONException {
-        ArrayList<Producto> productos = new ArrayList<>();
+    public static ArrayList<Producto> JsonObjectsBuild(JSONArray productos) throws JSONException {
+        ArrayList<Producto> productoslist = new ArrayList<>();
 
-        for (int i = 0; i < datos.length(); i++) {
-            productos.add(new Producto(datos.getJSONObject(i)));
+        for (int i = 0; i < productos.length(); i++) {
+            productoslist.add(new Producto(productos.getJSONObject(i)));
         }
-        return productos;
+        return productoslist;
     }
 
 }

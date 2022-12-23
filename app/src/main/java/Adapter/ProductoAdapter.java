@@ -43,6 +43,10 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         holder.lblidproducto.setText(producto.getIdproducto());
         holder.lblbarcode.setText(producto.getBarcode());
         holder.lblcosto.setText(producto.getCosto());
+        holder.lblprecunidad.setText(producto.getPreciounidad());
+        holder.lblprecmayorista.setText(producto.getPreciomayorista());
+
+
 
     }
 

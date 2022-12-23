@@ -35,7 +35,7 @@ import models.Producto;
 import webservice.Asynchtask;
 import webservice.WebService;
 
-public class MainActivity extends AppCompatActivity implements Asynchtask {
+public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerProduct;
     RequestQueue queue;
     @Override
@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
                         ArrayList<Producto> productos = new ArrayList<Producto> ();
 
                         try {
-                            JSONArray JSONlistaProducto=  new JSONArray(response);
+                            JSONObject JSONlista =  new JSONObject(response);
+                            JSONArray JSONlistaProducto= JSONlista.getJSONArray("productos");
+                            //JSONArray JSONlistaProducto=  new JSONArray(response);
                             productos = Producto.JsonObjectsBuild(JSONlistaProducto);
 
 
@@ -71,8 +73,8 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
                             recyclerProduct.setLayoutAnimation(animation);
 
 
-                            ProductoAdapter adaptadorvolumen = new ProductoAdapter(getApplicationContext(), productos);
-                            recyclerProduct.setAdapter(adaptadorvolumen);
+                            ProductoAdapter adaptadorproducto = new ProductoAdapter(getApplicationContext(), productos);
+                            recyclerProduct.setAdapter(adaptadorproducto);
 
                         }
                         catch (JSONException e)
@@ -111,8 +113,5 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
 
     }
 
-    @Override
-    public void processFinish(String result) throws JSONException {
 
-    }
 }
